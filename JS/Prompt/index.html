@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt</title>
+    <script src="fichier.js"></script>
+
+</head>
+<body>
+    
+    <!--Voici la base de cette fonction :-->
+    <script>
+        var userName = prompt('Entrez votre prénom :'); alert(userName); // Affiche le prénom entré par l'utilisateur
+        </script>
+        
+<!--
+On peut demander le prénom et afficher un message avec concaténation :
+-->
+        <script>
+            var start = 'Bonjour ', name, end = ' !', result;
+            name = prompt('Quel est votre prénom ?');
+            result = start + name + end;
+            alert(result);
+</script>
+
+
+
+<!--On peut aussi se servir de la fonction prompt() pour un calcul :
+-->
+<script>
+    var first, second, result;
+    first = prompt('Entrez le premier chiffre :');
+    second = prompt('Entrez le second chiffre :');
+result = parseInt(first) + parseInt(second); /* la fonction parseInt() transforme la chaîne de caractères en nombre */
+    alert(result);
+    </script>
+
+
+
+</body>
+</html>
