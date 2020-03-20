@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+</head>
+
+<body>
+
+    <script>
+        for (initialisation; condition; incrémentation) {
+            instruction_1;
+            instruction_2;
+            instruction_3;
+        } </script>
+
+
+    <script>
+        for (var iter = 1; iter <= 5; iter++) { // On initialise une variable, et tant qu'elle est inférieure ou égale à 5 on l'incrémente de 1.
+            alert('Itération n°' + iter); // A chaque fois on affiche une boîte de dialogue (5 fois)
+        } </script>
+
+
+
+
+
+    <script>
+        for (var prenoms = '', prenom; true;) { // ici sans incrémentation nécessaire,mais avec un point - virgule obligatoire après la condition true
+            prenom = prompt('Entrez un prénom :');
+            if (prenom) { prenoms += prenom + ' '; }
+            else { break; }
+        }
+        alert(prenoms);
+    </script>
+
+</body>
+
+</html>

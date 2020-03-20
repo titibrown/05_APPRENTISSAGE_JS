@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    let nomTab = [], answer = 'no';
+
+
+do {
+    nomTab.push(prompt('Entrer un prenom:'));
+    answer = prompt('Un autre prenom (yes/no) ?');
+} while (answer != 'no')
+
+if(nomTab.length > 0){
+    for(let i = 0; i < nomTab.length; i++){
+        alert(nomTab[i]);
+    }
+} else {
+    alert('Aucune prenom est engeristre!')
+}
+</body>
+</html>
