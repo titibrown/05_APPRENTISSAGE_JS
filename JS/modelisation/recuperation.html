@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--La propriété parentNode permet d'accéder à l'élément parent d'un élément :-->
+
+
+    <blockquote>
+       <p id="myP">Ceci est un paragraphe !</p>
+    </blockquote>
+    <script>
+       var paragraph = document.getElementById('myP');
+       var blockquote = paragraph.parentNode;
+    </script>
+
+
+<!--nodeType et nodeName permettent de vérifier le type et le nom d'un nœud :
+    var paragraph = document.getElementById('myP');
+    alert(paragraph.nodeType + '\n\n' +
+    paragraph.nodeName.toLowerCase());
+firstChild et lastChild permettent d'accéder au premier et au dernier élément d'un nœud :-->
+
+<div>
+       <p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en
+ emphase</strong></p>
+    </div>
+    <script>
+       var paragraph = document.getElementById('myP');
+       var first = paragraph.firstChild;
+       var last = paragraph.lastChild;
+       alert(first.nodeName.toLowerCase());
+       alert(last.nodeName.toLowerCase());
+</script>
+
+
+
+<!--Ou encore avec :
+    var paragraph = document.getElementById('myP');
+    var first = paragraph.firstChild;
+    var last = paragraph.lastChild;
+    alert(first.nodeValue);
+    alert(last.firstChild.data);
+childNodes retourne un tableau contenant la liste des enfants d'un élément.-->
+
+
+<!--nextSibling et previousSibling permettent d'accéder à l'élément suivant, et au précédent :-->
+
+
+<div>
+            <p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en
+      emphase</strong></p>
+         </div>
+         <script>
+var paragraph = document.getElementById('myP');
+var first = paragraph.firstChild;
+var next = first.nextSibling; alert(next.firstChild.data); // Affiche « un lien »
+</script>
+
+<div>
+    <p id="myP">Un peu de texte <a>et un lien</a></p>
+</div>
+<script>
+var paragraph = document.getElementById('myP');
+var child = paragraph.lastChild; // On prend le dernier enfant while (child) {
+if (child.nodeType === 1) { // C'est un élément HTML
+alert(child.firstChild.data);
+} else { // C'est certainement un noeud textuel
+         alert(child.data);
+}
+child = child.previousSibling; // À chaque tour de boucle, on prend l'enfant précédent
+ </script>
+
+<!--ttention ! Les espaces et retours à la ligne effectués dans le code HTML sont généralement considérés comme des nœuds 
+    textuels par les navigateurs. On utilise alors , lastElementChild, nextElementSibling et
+, non supportés par IE8 et inférieur.
+ 
+  <div>
+  <p id="myP">Un peu de texte <a>et un lien</a></p>
+firstElementChild
+ 
+previousElementSibling-->
+</body>
+</html>

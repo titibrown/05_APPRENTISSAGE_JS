@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer et insérer des éléments</title>
+</head>
+<body>
+    
+<!--vec le DOM, l'ajout d'un élément se fait en trois temps : on crée l'élément, on lui affecte des attributs, on
+     l'insère dans le document.
+-->
+
+<!--Par exemple, on crée <a> :
+    var newLink = document.createElement('a');
+On lui affecte des attributs :-->
+
+
+    newLink.id = 'sdz_link';
+    newLink.href = 'http://blog.crdp-versailles.fr/rimbaud/';
+    newLink.title = 'Découvrez le blog de la Classe Actu !';
+    newLink.setAttribute('tabindex', '10');
+<!--On l'insère dans le document :-->
+    <div><p id="myP">Un peu de texte <a>et un lien</a></p></div>
+    <script>
+       var newLink = document.createElement('a');
+       newLink.id = 'sdz_link';
+       newLink.href = 'http://blog.crdp-versailles.fr/rimbaud/';
+       newLink.title = 'Découvrez le blog de la Classe Actu !';
+       newLink.setAttribute('tabindex', '10');
+document.getElementById('myP').appendChild(newLink); // le nouvel élément est le dernier enfant dans le paragraphe avec id 'myP'
+       var newLinkText = document.createTextNode("Le Tonnerre de Rimbaud");
+newLink.appendChild(newLinkText); // ces deux lignes pour ajouter le texte </script>
+
+<!--Cloner, remplacer, supprimer
+pour cloner un élément, on utilise cloneNode(), et on choisit avec (true) ou sans (false) ses enfants et ses attributs.
+Pour remplacer un élément par un autre, on utilise replaceChild(), avec deux paramètres, le nouvel élément et l'élément qu'on veut remplacer -->
+         <div><p id="myP">Un peu de texte <a>et un lien</a></p></div>
+         <script>
+            var link = document.getElementsByTagName('a')[0];
+            var newLabel= document.createTextNode('et un hyperlien');
+            link.replaceChild(newLabel, link.firstChild);
+</script>
+
+<!--pour supprimer un élément, on utilise removeChild(), avec le nœud enfant à retirer : 
+var link = document.getElementsByTagName('a')[0];
+      link.parentNode.removeChild(link);
+Pour vérifier la présence d'éléments enfant, on utilise hasChildNodes() :-->
+      <div><p id="myP">Un peu de texte <a>et un lien</a></p></div>
+      <script>
+         var paragraph = document.getElementsByTagName('p')[0];
+alert(paragraph.hasChildNodes()); // Affiche true </script>
+<!--Pour insérer un élément avant un autre, on utilise insertBefore() :-->
+      <p id="myP">Un peu de texte <a>et un lien</a></p>
+      <script>
+         var paragraph = document.getElementsByTagName('p')[0];
+         var emphasis = document.createElement('em'),
+         emphasisText = document.createTextNode(' en emphase légère ');
+         emphasis.appendChild(emphasisText);
+         paragraph.insertBefore(emphasis, paragraph.lastChild);
+</script>
+
+
+
+</body>
+</html>

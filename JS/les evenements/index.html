@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quelques exemples :
+    <span onclick="alert('Hello !');">Cliquez-moi !</span>
+ou :
+ou :
+    <input id="input" type="text" size="50" value="Cliquez ici !"
+onfocus="this.value='Appuyez maintenant sur votre touche de tabulation.';" onblur="this.value='Cliquez ici !';"/>
+<br /><br/>
+    <a href="#" onfocus="document.getElementById('input').value = 'Vous avez maintenant le focus sur le lien, bravo !';">Un lien bidon</a>
+ou (sans return false) :
+<a href="http://blog.crdp-versailles.fr/rimbaud/" onclick="alert('Vous avez cliqué!');">Cliquez-moi !</a>
+ou (avec return false) :
+<a href="http://blog.crdp-versailles.fr/rimbaud/" onclick="alert('Vous avez cliqué !'); return false;">Cliquez-moi !</a>
+ou (lien créé seulement pour l'événement onclick, sans href) :
+<a href="#" onclick="alert('Vous avez cliqué !'); return false;"> Cliquez-moi !
+</a>
+</body>
+
+</html>

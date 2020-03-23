@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!--Le DOM (Document Object Model) est une interface de programmation (ou API, Application Programming Interface) pour 
+        les documents XML et HTML. Via le Javascript, le DOM permet d'accéder au code du document ; on va alors pouvoir modifier des 
+        éléments du code HTML. Contrairement à ce qui a été vu avant, alert() n'est pas vraiment une fonction, mais une méthode 
+        qui appartient à l'objet window, qui est implicite (il y a en fait très peu de variables globales). Les deux lignes suivantes
+         signifient la même chose :-->
+    
+    
+    <script>
+        alert('Hello world !');
+        window.alert('Hello world !');
+    </script>
+
+
+
+    <!--L'objet document est un sous-objet de window. L'objet document possède trois méthodes principales :
+    getElementById(), getElementsByTagName() et getElementsByName().
+    Avec getElementById() :-->
+
+
+    <div id="myDiv">
+        <p>Un peu de texte <a>et un lien</a></p>
+    </div>
+    <script>
+        var div = document.getElementById('myDiv');
+        alert(div); </script>
+
+
+  <!--  On nous dit alors que div est un objet de type HTMLDivElement. Cela fonctionne. Avec getElementsByTagName(), on
+    récupère les éléments sous forme de tableau :-->
+
+    <script>
+        var divs = document.getElementsByTagName('div');
+        for (var i = 0, c = divs.length; i < c; i++) {
+            alert('Element n° ' + (i + 1) + ' : ' + divs[i]);
+        } </script>
+
+
+   <!-- On parcourt le tableau avec une boucle pour récupérer les éléments.
+    Avec getElementsByName(), on récupère les éléments par name, dans les formulaires.
+    On peut aussi utiliser , qui renvoie le premier élément trouvé correspondant au sélecteur CSS spécifié, ou ,
+    qui renvoie tous les éléments (sous forme de tableau) correspondant au sélecteur CSS spécifié entre
+    parenthèses :-->
+
+    <div id="menu">
+        <div class="item"><span>Élément 1</span><span>Élément 2</span></div>
+        <div class="publicite"><span>Élément 3</span><span>Élément 4</span></div>
+    </div>
+    <div id="contenu"><span>Introduction au contenu de la page...</span></div>
+    <script>
+        var query = document.querySelector('#menu .item span'),
+            queryAll = document.querySelectorAll('#menu .item span'); alert(query.innerHTML); // Affiche : "Élément 1" alert(queryAll.length); // Affiche : "2"
+        alert(queryAll[0].innerHTML + ' - ' + queryAll[1].innerHTML); </script>
+
+
+
+<!-- On suit le schéma suivant :
+    Node > Element >HTMLElement >HTMLDivElement
+    On peut jouer sur les attributs d'une balise HTML avec l'objet Element et getAttribute() et setAttribute(),
+    permettant par exemple de modifier un lien :-->
+   
+    <a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié
+        dynamiquement</a>
+    <script>
+        var link = document.getElementById('myLink');
+        var href = link.getAttribute('href'); // On récupère l'attribut « href » alert(href);
+        link.setAttribute('href', 'http://blog.crdp-versailles.fr/rimbaud/'); // on édite
+    </script>
+
+
+<!--
+    Cela fonctionne aussi avec :-->
+
+
+    <a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié
+        dynamiquement</a>
+    <script>
+        var link = document.getElementById('myLink');
+        var href = link.href;
+        alert(href);
+        link.href = 'http://www.clg-rimbaud-aubergenville.ac-versailles.fr/';
+    </script>
+
+
+<!--  Par contre on ne peut pas utiliser class, à remplacer par className en Javascript. Comme for, à remplacer par
+    htmlFor (le for du Javascript servant aux boucles utiles aux fonctions).
+    innerHTML permet de récupérer le code HTML enfant d'un élément en texte :-->
+  
+    <div id="myDiv">
+        <p>Un peu de texte <a>et un lien</a></p>
+    </div>
+    <script>
+        var div = document.getElementById('myDiv');
+        alert(div.innerHTML);
+    </script>
+
+<!-- On peut alors définir un nouveau contenu :
+    document.getElementById('myDiv').innerHTML = '<blockquote>Je mets une citation à la
+        place du paragraphe</blockquote>';
+    Ou encore ajouter un contenu à celui qui est en place (à éviter dans une boucle) :
+    document.getElementById('myDiv').innerHTML += ' et <strong>une portion mise en
+        emphase</strong>.';-->
+   
+</body>
+
+</html>

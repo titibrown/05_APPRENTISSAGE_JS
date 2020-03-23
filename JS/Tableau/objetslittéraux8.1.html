@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!--    On peut remplacer l'indice par un identifiant. Dans ce cas on crée un objet 
+        (dans l'exemple family). Les identifiants créés (self, sister...) sont des propriétés, 
+        avec plusieurs possibilités d'affichage (ce qui convient à toutes les propriétés, également pour length par exemple).
+         On peut ajouter des données (avec une méthode différente que pour un tableau).
+-->
+
+
+
+    <script>
+        var family = {
+            self: 'Rafael',
+            sister: 'Mathilde',
+            brother: 'Ahmed',
+            cousin_1: 'Jérôme',
+            cousin_2: 'Guillaume'
+        };
+        var id = 'sister';
+        alert(family[id]); // Affiche : « Mathilde »
+        alert(family.brother); // Affiche : « Ahmed »
+        alert(family['self']); // Affiche : « Rafael »
+        family['uncle'] = 'Pauline'; // On ajoute une donnée, avec un identifiant. family.aunt = 'Karim'; // On peut ajouter aussi de cette manière. alert(family.uncle); </script>
+
+
+
+    <!--On ne peut pas parcourir l'objet avec for, parce for s'occupe d'incrémenter des variables numériques. 
+    Là on fournit une variable-clé pour le parcours
+-->
+
+
+    <script>
+        var family = {
+            self: 'Rafael',
+            sister: 'Mathilde',
+            brother: 'Ahmed',
+            cousin_1: 'Jérôme',
+            cousin_2: 'Guillaume'
+        };
+        for (var id in family) { // On stocke l'identifiant dans « id » pour parcourir l'objet « family »
+            alert(family[id]);
+        } </script>
+
+
+</body>
+
+</html>

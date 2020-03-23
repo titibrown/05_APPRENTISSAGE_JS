@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<!--On peut ajouter des items avec la méthode push() :-->
+
+
+    <script>
+        var myArray = ['Rafael', 'Mathilde'];
+myArray.push('Ahmed'); // Ajoute « Ahmed » à la fin du tableau
+myArray.push('Jérôme', 'Guillaume'); // Ajoute « Jérôme » et « Guillaume » à la fin du tableau
+</script>
+
+
+
+<!--La méthode unshift() fonctionne comme
+au début du tableau. Les méthodes shift() et     retirent respectivement le premier et le dernier élément du tableau.-->
+
+<script>
+var myArray = ['Rafael', 'Mathilde', 'Ahmed', 'Jérôme', 'Guillaume']; myArray.shift(); // Retire « Rafael »
+myArray.pop(); // Retire « Guillaume »
+alert(myArray); // Affiche « Mathilde,Ahmed,Jérôme »
+</script>
+
+
+
+
+<!--On peut découper une chaîne de caractères en tableau avec split() :-->
+
+<script>
+var cousinsString = 'Jérôme Guillaume Paul',
+cousinsArray = cousinsString.split(' '); // Avec les espaces, on a trois items alert(cousinsString);
+alert(cousinsArray);
+</script>
+
+
+
+<!--On fait l'inverse avec join() :-->
+
+         <script>
+         var cousinsString_2 = cousinsArray.join('-');
+         alert(cousinsString_2); </script
+
+
+
+</body>
+</html>
